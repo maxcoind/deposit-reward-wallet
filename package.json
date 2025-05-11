@@ -1,7 +1,7 @@
 {
-  "name": "smart-contract-project-draft",
+  "name": "solidity-boilerplate",
   "version": "1.0.0",
-  "description": "Draft for a smart contract project",
+  "description": "Draft for a smart contract boilerplate",
   "files": [
     "/contracts/**/*.sol",
     "!/contracts/mocks/**/*"
@@ -60,6 +60,7 @@
     "solhint": "^5.1.0",
     "solhint-plugin-openzeppelin": "file:solhint-plugins/solhint-openzeppelin",
     "solidity-coverage": "^0.8.16",
+    "solidity-docgen": "0.6.0-beta.36",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.32.0",

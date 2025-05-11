@@ -1,6 +1,7 @@
 import type { HardhatUserConfig } from 'hardhat/config';
 import '@nomicfoundation/hardhat-foundry';
 import '@nomiclabs/hardhat-solhint';
+import 'solidity-docgen';
 // Replace toolbox
 import '@nomicfoundation/hardhat-verify';
 import '@nomicfoundation/hardhat-viem';
