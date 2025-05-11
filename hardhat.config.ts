@@ -19,7 +19,7 @@ chai.use(chaiAsPromised);
 const config: HardhatUserConfig = {
   solidity: '0.8.28',
   gasReporter: {
-    enabled: true,
+    enabled: false,
     currency: 'USD',
   },
 };

@@ -20,7 +20,8 @@
     "prepack": "scripts/prepack.sh",
     "slither": "pnpm run clean && slither .",
     "test": "hardhat test",
-    "prepare": "husky"
+    "prepare": "husky",
+    "coverage": "scripts/checks/coverage.sh"
   },
   "keywords": [],
   "author": "",
