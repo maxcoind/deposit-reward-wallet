@@ -71,6 +71,9 @@ importers:
       hardhat:
         specifier: ^2.24.0
         version: 2.24.0(ts-node@10.9.2(@types/node@22.15.17)(typescript@5.8.3))(typescript@5.8.3)
+      hardhat-exposed:
+        specifier: ^0.3.19
+        version: 0.3.19(hardhat@2.24.0(ts-node@10.9.2(@types/node@22.15.17)(typescript@5.8.3))(typescript@5.8.3))
       hardhat-gas-reporter:
         specifier: ^2.2.3
         version: 2.2.3(hardhat@2.24.0(ts-node@10.9.2(@types/node@22.15.17)(typescript@5.8.3))(typescript@5.8.3))(typescript@5.8.3)(zod@3.24.4)
@@ -1546,6 +1549,11 @@ packages:
     resolution: {integrity: sha512-vafaFqs8MZkRrSX7sFVUdo3ap/eNiLnb4IakshzvP56X5Nr1iGKAIqdX6tMlm6HcNRIkr6AxO5jFEoJzzpT8aQ==}
     engines: {node: '>=0.4.7'}
     hasBin: true
+
+  hardhat-exposed@0.3.19:
+    resolution: {integrity: sha512-vVye5TurJu8dWeo4ma+EfLAOQaJyica4uncd0/BGPO2tmexuDwZUmE1vYx81PlP4Iak3wqkNTEPxWQaE2ZnKnw==}
+    peerDependencies:
+      hardhat: ^2.3.0
 
   hardhat-gas-reporter@2.2.3:
     resolution: {integrity: sha512-/52fDR0WOgPTjImmx4j179SAgxPv/499TD0o0qnMhaRr24i2cqlcmCW92FJi0QAKu7HcnxdBGZWQP/5aPjQqUw==}
@@ -4522,6 +4530,12 @@ snapshots:
       wordwrap: 1.0.0
     optionalDependencies:
       uglify-js: 3.19.3
+
+  hardhat-exposed@0.3.19(hardhat@2.24.0(ts-node@10.9.2(@types/node@22.15.17)(typescript@5.8.3))(typescript@5.8.3)):
+    dependencies:
+      hardhat: 2.24.0(ts-node@10.9.2(@types/node@22.15.17)(typescript@5.8.3))(typescript@5.8.3)
+      micromatch: 4.0.8
+      solidity-ast: 0.4.60
 
   hardhat-gas-reporter@2.2.3(hardhat@2.24.0(ts-node@10.9.2(@types/node@22.15.17)(typescript@5.8.3))(typescript@5.8.3))(typescript@5.8.3)(zod@3.24.4):
     dependencies:

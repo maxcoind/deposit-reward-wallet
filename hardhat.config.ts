@@ -2,6 +2,7 @@ import type { HardhatUserConfig } from 'hardhat/config';
 import '@nomicfoundation/hardhat-foundry';
 import '@nomiclabs/hardhat-solhint';
 import 'solidity-docgen';
+
 // Replace toolbox
 import '@nomicfoundation/hardhat-verify';
 import '@nomicfoundation/hardhat-viem';
@@ -12,13 +13,45 @@ import 'solidity-coverage';
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import '@nomicfoundation/hardhat-network-helpers';
+import 'hardhat-exposed';
+import 'solidity-coverage';
 
 chai.use(chaiAsPromised);
 
 // end replace toolbox
 
+const evmVersion = process.env.EVM_VERSION || 'prague';
+
 const config: HardhatUserConfig = {
-  solidity: '0.8.28',
+  solidity: {
+    version: '0.8.28',
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200,
+      },
+      evmVersion: evmVersion,
+      viaIR: false,
+      outputSelection: { '*': { '*': ['storageLayout'] } },
+    },
+  },
+  networks: {
+    hardhat: {
+      hardfork: evmVersion,
+      // Exposed contracts often exceed the maximum contract size. For normal contract,
+      // we rely on the `code-size` compiler warning, that will cause a compilation error.
+      allowUnlimitedContractSize: true,
+      initialBaseFeePerGas: undefined,
+      enableRip7212: true,
+    },
+  },
+
+  exposed: {
+    imports: true,
+    initializers: true,
+    exclude: ['vendor/**/*', '**/*WithInit.sol'],
+  },
+
   gasReporter: {
     enabled: false,
     currency: 'USD',
