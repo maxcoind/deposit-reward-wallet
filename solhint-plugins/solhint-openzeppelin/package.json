@@ -1,0 +1,9 @@
+{
+  "name": "solhint-plugin-openzeppelin",
+  "version": "0.0.2",
+  "private": true,
+  "exports": "./index.js",
+  "dependencies": {
+    "minimatch": "^3.1.2"
+  }
+}
