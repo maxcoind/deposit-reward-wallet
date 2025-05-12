@@ -2,6 +2,8 @@ import type { HardhatUserConfig } from 'hardhat/config';
 import '@nomicfoundation/hardhat-foundry';
 import '@nomiclabs/hardhat-solhint';
 import 'solidity-docgen';
+import('@ensdomains/hardhat-chai-matchers-viem');
+import '@solidstate/hardhat-accounts';
 
 // Replace toolbox
 import '@nomicfoundation/hardhat-verify';
@@ -15,6 +17,7 @@ import chaiAsPromised from 'chai-as-promised';
 import '@nomicfoundation/hardhat-network-helpers';
 import 'hardhat-exposed';
 import 'solidity-coverage';
+import 'hardhat-abi-exporter';
 
 chai.use(chaiAsPromised);
 
@@ -44,6 +47,14 @@ const config: HardhatUserConfig = {
       initialBaseFeePerGas: undefined,
       enableRip7212: true,
     },
+  },
+  abiExporter: {
+    path: './data/abi',
+    runOnCompile: true,
+    clear: true,
+    flat: false,
+    spacing: 2,
+    pretty: true,
   },
 
   exposed: {
