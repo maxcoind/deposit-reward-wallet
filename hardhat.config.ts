@@ -49,7 +49,7 @@ const config: HardhatUserConfig = {
     },
   },
   abiExporter: {
-    path: './data/abi',
+    path: './abi',
     runOnCompile: true,
     clear: true,
     flat: false,

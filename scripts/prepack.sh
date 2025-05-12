@@ -20,4 +20,4 @@ cp artifacts/contracts/**/*.json contracts/build/contracts
 rm contracts/build/contracts/*.dbg.json
 node scripts/remove-ignored-artifacts.mjs
 
-cp README.md contracts/
+# cp README.md contracts/
