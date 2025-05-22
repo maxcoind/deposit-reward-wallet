@@ -11,6 +11,12 @@ applyTo: 'test/*.t.sol'
 
 - always add pragma to start of file: pragma solidity ^0.8.28;
 
+
+
+
+
+
+
 ### ExampleContract.t.sol
 
 ```solidity
