@@ -2,8 +2,6 @@
 applyTo: 'test/*.test.ts'
 ---
 
-- Always use viem to interact with contracts.
-- Use typescript
 - Disallow arrow functions as arguments to mocha functions
 
 ### Available additional chai matchers
