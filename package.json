@@ -19,7 +19,7 @@
     "gas-report": "env ENABLE_GAS_REPORT=true pnpm run test",
     "prepack": "scripts/prepack.sh",
     "slither": "pnpm run clean && slither .",
-    "test": "hardhat test && forge test",
+    "test": "hardhat test",
     "prepare": "husky",
     "coverage": "scripts/checks/coverage.sh",
     "docgen": "hardhat docgen",

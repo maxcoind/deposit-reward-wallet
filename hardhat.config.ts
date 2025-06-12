@@ -1,4 +1,5 @@
 import type { HardhatUserConfig } from 'hardhat/config';
+import { vars } from 'hardhat/config';
 import '@nomicfoundation/hardhat-foundry';
 import '@nomiclabs/hardhat-solhint';
 import 'solidity-docgen';
@@ -25,6 +26,22 @@ chai.use(chaiAsPromised);
 
 const evmVersion = process.env.EVM_VERSION || 'prague';
 
+const etherscan = {
+  etherscan: {
+    apiKey: {
+      bsc: vars.has('BSCSCAN_KEY') ? vars.get('BSCSCAN_KEY') : '',
+    },
+  },
+};
+
+const bscNetwork = {
+  bsc: {
+    url: 'https://bsc-dataseed.binance.org/',
+    chainId: 56,
+    accounts: vars.has('PRIVATE_KEY') ? [vars.get('PRIVATE_KEY')] : [],
+  },
+};
+
 const config: HardhatUserConfig = {
   solidity: {
     version: '0.8.28',
@@ -47,6 +64,15 @@ const config: HardhatUserConfig = {
       initialBaseFeePerGas: undefined,
       enableRip7212: true,
     },
+    anvil: {
+      url: 'http://localhost:8545',
+      chainId: 31337,
+      hardfork: evmVersion,
+      allowUnlimitedContractSize: true,
+      initialBaseFeePerGas: undefined,
+      enableRip7212: true,
+    },
+    ...bscNetwork,
   },
   abiExporter: {
     path: './abi',
@@ -67,6 +93,7 @@ const config: HardhatUserConfig = {
     enabled: false,
     currency: 'USD',
   },
+  ...etherscan,
 };
 
 export default config;

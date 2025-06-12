@@ -1,3 +1,16 @@
+Create smart ownable smart contract, which call function for deposit reward from other contract with some amount of tokens.
+Constructor: ERC20 token address, target contract address
+use SafeTransfer
+approve for each transaction separate
+
+interface for deposit reward:
+
+```solidity
+interface IDepositor {
+  function deposit_reward(uint amount) public;
+}
+```
+
 Needs:
 
 - nodejs
